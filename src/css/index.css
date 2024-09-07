@@ -111,3 +111,18 @@ footer {
 .footer-links a:hover {
     color: #ddd;
 }
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 0;
+    right: 0; 
+    background-color: #ee0000; 
+    padding: 0px; 
+    border: 0px solid #ddd; 
+    border-radius: 2px; 
+}
+
+.fixed-bottom-right img {
+    max-width: 90px; 
+    height: auto; 
+}
+
