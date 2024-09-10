@@ -53,8 +53,24 @@
         </div>
     </footer>
 
-    <div class="fixed-bottom-right">
-        <a href="https://bot.writesonic.com/share/bot/80dc519b-909b-4e7f-9167-2a75b2b6e505" target="_blank">
-            <img src="assets/Chatbot.png" alt="Chatbot">
-        </a>
+  
     </div>
+    <script>
+        (function (w, d, s, o, f, js, fjs) {
+          w["botsonic_widget"] = o;
+          w[o] =
+            w[o] ||
+            function () {
+              (w[o].q = w[o].q || []).push(arguments);
+            };
+          (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+          js.id = o;
+          js.src = f;
+          js.async = 1;
+          fjs.parentNode.insertBefore(js, fjs);
+        })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+        Botsonic("init", {
+          serviceBaseUrl: "https://api-azure.botsonic.ai",
+          token: "a57ffab7-633f-486b-8ac2-9e6074f9f8a6",
+        });
+      </script>
