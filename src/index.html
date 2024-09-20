@@ -14,9 +14,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Añadir JavaScript -->
-    <script src="/src/js/index.js"></script>
-
     <!-- Importar JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -30,7 +27,8 @@
                         <li class="nav-item"><a class="nav-link" href="./index.html#Servicios">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="./index.html#Acercade">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="./index.html#Contactenos">Contactenos</a></li>
-                    </ul><button class="btn btn-primary" type="button">Iniciar Sesión</button>
+                    </ul>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Iniciar Sesión</button>
                 </div>
             </div>
         </nav>
@@ -61,7 +59,7 @@
                                 <div class="col-12">
                                     <p class="product-description">Tarjeta madre marca gigabyte</p>
                                     <div class="row">
-                                        <div class="col-6"><button class="btn btn-primary" type="button">Compra Ahora!</button></div>
+                                        <div class="col-6"><button class="btn btn-primary" type="button" onclick="(btnCompras('Tarjeta madre marca gigabyte'))" >Compra Ahora!</button></div>
                                         <div class="col-6">
                                             <p class="product-price">$800.000 COP </p>
                                         </div>
@@ -85,7 +83,7 @@
                                 <div class="col-12">
                                     <p class="product-description">Fuente de poder generica marca PowerGroup</p>
                                     <div class="row">
-                                        <div class="col-6"><button class="btn btn-primary" type="button">Compra Ahora!</button></div>
+                                        <div class="col-6"><button class="btn btn-primary" type="button" onclick="(btnCompras('Fuente de poder generica marca PowerGroup'))">Compra Ahora!</button></div>
                                         <div class="col-6">
                                             <p class="product-price">$120.000 COP </p>
                                         </div>
@@ -109,7 +107,7 @@
                                 <div class="col-12">
                                     <p class="product-description">Tarjeta gráfica marca Gigabyte</p>
                                     <div class="row">
-                                        <div class="col-6"><button class="btn btn-primary" type="button">Compra Ahora!</button></div>
+                                        <div class="col-6"><button class="btn btn-primary" type="button" onclick="(btnCompras('Tarjeta gráfica marca Gigabyte'))">Compra Ahora!</button></div>
                                         <div class="col-6">
                                             <p class="product-price">$1'300.000 COP </p>
                                         </div>
@@ -124,10 +122,58 @@
                 <h2 class="text-center text-body-secondary">Acerca de Nosotros</h2>
                 <p class="text-center">Somos una empresa líder en el mercado de la tecnología, con más de 10 años de experiencia. Nos dedicamos a ofrecer productos de alta calidad y las últimas novedades en el mundo tecnológico. Nuestro compromiso es brindarte la mejor experiencia de compra, con un equipo apasionado y enfocado en tus necesidades.</p>
             </section>
-            <section id="Contactenos" class="my-3">
-                <h2 class="text-center text-body-secondary">Contactenos</h2>
-                <p class="text-center">¿Tienes alguna pregunta o necesitas asistencia? No dudes en contactarnos. Estamos aquí para ayudarte a encontrar la mejor solución tecnológica para ti. Puedes llamarnos al (123) 456-7890 o también puedes visitarnos en nuestra tienda física ubicada en Calle Tecnología 123, Ciudad Tech.</p>
+            <section id="Contactenos" class="position-relative my-3">
+                <div class="d-none d-md-block position-absolute mx-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3947207432!2d-74.27262552044822!3d4.648620643934393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1726791635596!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="position-relative"> <!--  my-5 m-md-5"> -->
+                    <div class="container position-relative">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-6 col-xxl-4 offset-md-6 offset-xl-7 offset-xxl-8">
+                                <div>
+                                    <form id="formContact" class="border rounded shadow p-3 p-md-4 p-lg-5" method="post" style="background: var(--bs-body-bg);">
+                                        <h3 class="text-center mb-3"><span style="color: var(--bs-secondary-color);">Contáctenos</span></h3>
+                                        <div class="mb-3"><input class="form-control" type="text" id="nameContact" name="name" placeholder="Nombre Completo" required /></div>
+                                        <div class="mb-3"><input class="form-control" type="email" id="emailContact" name="email" placeholder="Correo Electrónico" required /></div>
+                                        <div class="mb-3"><textarea class="form-control" name="message" id="messageContact" placeholder="Mensaje" rows="6" required></textarea></div>
+                                        <div class="mb-3"><button class="btn btn-primary" type="submit">Enviar</button></div>
+                                        <!-- <div class="mb-3">
+                                            <p class="text-center">¿Tienes alguna pregunta o necesitas asistencia? No dudes en contactarnos. Estamos aquí para ayudarte a encontrar la mejor solución tecnológica para ti. Puedes llamarnos al (123) 456-7890 o también puedes visitarnos en nuestra tienda física ubicada en Calle Tecnología 123, Ciudad Tech.</p>
+                                        </div> -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Iniciar Sesión</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label" for="email">Correo Electrónico</label>
+                                <input class="form-control mb-3" type="email" name="email" id="email">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="clave">Contraseña</label>
+                                <input class="form-control mb-3" type="password" name="clave" id="clave">
+                            </div>     
+                            <div class="col-auto mx-auto">
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
+                                <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="text-center bg-dark">
@@ -141,7 +187,10 @@
         </div>
     </footer>
 
-    <!-- <script>
+    <!-- Añadir JavaScript -->
+    <script src="/src/js/index.js"></script>
+
+    <script>
         (function (w, d, s, o, f, js, fjs) {
           w["botsonic_widget"] = o;
           w[o] =
@@ -159,6 +208,6 @@
           serviceBaseUrl: "https://api-azure.botsonic.ai",
           token: "a57ffab7-633f-486b-8ac2-9e6074f9f8a6",
         });
-      </script> -->
+    </script>
 </body> 
 </html>  
