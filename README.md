@@ -35,4 +35,4 @@ El proyecto está dividido en las siguientes ramas:
 
 ## GitHub Actions
 
-Se utiliza GitHub Actions para automatizar los despliegues. El proyecto se despliega automáticamente a partir de la rama `master`.
+Se utiliza GitHub Actions para automatizar los despliegues. El proyecto se despliega automáticamente a partir de la rama `deployment`.
